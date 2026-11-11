@@ -34,12 +34,12 @@ export default function LoginPage() {
     <div className="auth">
       <form className="card stack" onSubmit={submit}>
         <div className="brand">
-          <svg className="mascot"><use href="#astro" /></svg>
+          <svg className="mascot"><use href="#sabi" /></svg>
           <div><b>AstraBite</b><small>by Astratech</small></div>
         </div>
         <div>
           <h1 style={{ fontSize: 26 }}>{mode === "masuk" ? "Masuk dulu, Bos" : "Bikin akun"} <span className="scribble">👋</span></h1>
-          <p className="muted" style={{ marginTop: 6 }}>Kasir, stok, promo, dan Astro siap kerja.</p>
+          <p className="muted" style={{ marginTop: 6 }}>Kasir, stok, promo, dan Sabi siap kerja.</p>
         </div>
         {err && <div className="err">{err}</div>}
         {info && <div className="okmsg">{info}</div>}

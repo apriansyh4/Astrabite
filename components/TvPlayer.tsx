@@ -199,7 +199,7 @@ export default function TvPlayer({ token, onLabel }: { token: string; onLabel?: 
     <div className="tv-frame">
       <div className="tv-deco" aria-hidden="true"><i>🌶️</i><i>✨</i><i>🍜</i><i>🧋</i></div>
       <div className="tv-top">
-        <span className="tv-logo"><svg><use href="#astro" /></svg>{feed.settings.nama_toko}</span>
+        <span className="tv-logo"><svg><use href="#sabi" /></svg>{feed.settings.nama_toko}</span>
         <span className="tv-clock num">{clock}</span>
       </div>
       <div className="tv-slide" key={`${idx}-${cur?.t}`}>{body}</div>

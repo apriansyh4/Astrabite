@@ -2,7 +2,7 @@
 export default function Sprite() {
   return (
     <svg width="0" height="0" style={{ position: "absolute" }} aria-hidden="true">
-      <symbol id="astro" viewBox="0 0 64 64">
+      <symbol id="sabi" viewBox="0 0 64 64">
         <defs>
           <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0" stopColor="#D9301A" />
@@ -22,7 +22,7 @@ export default function Sprite() {
       <symbol id="i-promo" viewBox="0 0 24 24"><path d="M4 10v4a1 1 0 0 0 1 1h2l6 4V5L7 9H5a1 1 0 0 0-1 1z" /><path d="M17 9a4 4 0 0 1 0 6M19.5 6.5a7.5 7.5 0 0 1 0 11" /></symbol>
       <symbol id="i-tv" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2" /><path d="M8 21h8M12 17v4" /></symbol>
       <symbol id="i-cuan" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="3" /><path d="M3 10h18M16 15h2" /><path d="M6 6V5a2 2 0 0 1 2-2h8" /></symbol>
-      <symbol id="i-astro" viewBox="0 0 24 24"><path d="M12 3c.9 4.6 2.4 6.1 7 7-4.6.9-6.1 2.4-7 7-.9-4.6-2.4-6.1-7-7 4.6-.9 6.1-2.4 7-7z" /><path d="M19 17v4M17 19h4" /></symbol>
+      <symbol id="i-sabi" viewBox="0 0 24 24"><path d="M12 3c.9 4.6 2.4 6.1 7 7-4.6.9-6.1 2.4-7 7-.9-4.6-2.4-6.1-7-7 4.6-.9 6.1-2.4 7-7z" /><path d="M19 17v4M17 19h4" /></symbol>
       <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z" /><circle cx="12" cy="13" r="3.5" /></symbol>
     </svg>
   );
