@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "UMKM by LoginMasuk",
-    short_name: "UMKM",
+    name: "AstraBite by Astratech",
+    short_name: "AstraBite",
     description: "Kasir, stok, promo, layar TV, dan asisten AI buat UMKM makanan.",
     start_url: "/",
     display: "standalone",
