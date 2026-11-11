@@ -4,7 +4,7 @@ import { Toaster } from "@/components/toast";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "UMKM",
+  title: "UMKM - AstraBite",
   description: "Sistem operasional UMKM makanan by LoginMasuk: kasir, stok, promo, layar TV, dan asisten AI.",
 };
 
