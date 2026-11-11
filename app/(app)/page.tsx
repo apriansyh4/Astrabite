@@ -84,7 +84,7 @@ async function DashboardInner() {
       <div className="hello">
         <div>
           <p className="eyebrow muted">{tgl}</p>
-          <h1>{sapa}, Bos! <span className="scribble">{kritis.length ? "cek stok ya 👀" : "UMKM TERBAIK"}</span></h1>
+          <h1>{sapa}, Bos! <span className="scribble">{kritis.length ? "cek stok ya 👀" : "UMKM TERBAIK!!"}</span></h1>
         </div>
         {streak > 0 && <span className="streak">🔥 {streak} hari tembus target</span>}
       </div>
