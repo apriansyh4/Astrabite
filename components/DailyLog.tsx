@@ -18,17 +18,17 @@ export default function DailyLog({ awal, fallback }: { awal: string | null; fall
   return (
     <div className="card log pop-violet">
       <div className="row" style={{ marginBottom: 10 }}>
-        <svg style={{ width: 40, height: 40 }}><use href="#astro" /></svg>
+        <svg style={{ width: 40, height: 40 }}><use href="#sabi" /></svg>
         <div>
-          <h2 style={{ color: "#fff" }}>Daily Log dari Astro</h2>
+          <h2 style={{ color: "#fff" }}>Daily Log dari Sabi</h2>
           <span style={{ fontSize: 12, opacity: 0.85 }}>{isi ? "Ringkasan AI hari ini" : "Ringkasan otomatis · klik buat versi AI"}</span>
         </div>
       </div>
       <ul>{poin.map((p, i) => <li key={i}>{p}</li>)}</ul>
       {err && <p className="err" style={{ marginTop: 10 }}>{err}</p>}
       <div className="row wrap" style={{ marginTop: 14 }}>
-        <button className="btn sm" onClick={buat} disabled={busy}>{busy ? "Astro lagi mikir…" : isi ? "↻ Perbarui" : "✦ Bikin pakai AI"}</button>
-        <Link className="btn sm" href="/astro">Tanya Astro →</Link>
+        <button className="btn sm" onClick={buat} disabled={busy}>{busy ? "Sabi lagi mikir…" : isi ? "↻ Perbarui" : "✦ Bikin pakai AI"}</button>
+        <Link className="btn sm" href="/sabi">Tanya Sabi →</Link>
       </div>
     </div>
   );

@@ -109,7 +109,7 @@ export default function MenuManager({ menus, ings, recipes }: { menus: Menu[]; i
                 {!rs.length && <tr><td className="muted">Resep belum diisi, jadi stok & HPP belum kehitung.</td><td /></tr>}
               </tbody></table>
               {rs.length > 0 && mg < 0.55 && (
-                <div className="tip">💡 <b>Saran Astro:</b> margin tipis nih. Naikin ke <b className="num">{rp(saranHarga(h))}</b> biar margin ±60%.
+                <div className="tip">💡 <b>Saran Sabi:</b> margin tipis nih. Naikin ke <b className="num">{rp(saranHarga(h))}</b> biar margin ±60%.
                   <div style={{ marginTop: 8 }}>
                     <button className="btn sm primary" onClick={async () => {
                       const { error } = await createClient().from("menus").update({ harga: saranHarga(h) }).eq("id", m.id);

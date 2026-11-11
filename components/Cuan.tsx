@@ -63,17 +63,17 @@ export default function Cuan({ ings, expenses, omzet, modal, keluar }: { ings: I
 
   return (
     <>
-      <div className="head"><div><h1>Cuan Tracker</h1><p>Foto nota belanja, Astro yang ngetik. Stok bahan ikut keisi.</p></div></div>
+      <div className="head"><div><h1>Cuan Tracker</h1><p>Foto nota belanja, Sabi yang ngetik. Stok bahan ikut keisi.</p></div></div>
       <div className="cuan">
         <div className="stack">
           <div className="card stack">
-            <div className="row between"><h2>Astro Scan</h2><span className="pill" style={{ background: "var(--violet-t)", color: "var(--violet)" }}>✦ AI</span></div>
+            <div className="row between"><h2>Sabi Scan</h2><span className="pill" style={{ background: "var(--violet-t)", color: "var(--violet)" }}>✦ AI</span></div>
             {err && <div className="err">{err}</div>}
             {fase === "idle" && (
               <label className="drop" htmlFor="nota-file">
                 <span className="drop-ic"><svg className="ic"><use href="#i-camera" /></svg></span>
                 <b>Foto atau upload nota belanja</b>
-                <span className="muted" style={{ fontSize: 13 }}>JPG/PNG maks 5 MB. Astro baca isinya, lalu masukin ke pengeluaran & stok</span>
+                <span className="muted" style={{ fontSize: 13 }}>JPG/PNG maks 5 MB. Sabi baca isinya, lalu masukin ke pengeluaran & stok</span>
                 <input type="file" id="nota-file" accept="image/*" capture="environment" onChange={(e) => scan(e.target.files?.[0])} />
               </label>
             )}
@@ -84,7 +84,7 @@ export default function Cuan({ ings, expenses, omzet, modal, keluar }: { ings: I
                   {preview && <img src={preview} alt="Nota yang diupload" />}
                   <div className="scanline" />
                 </div>
-                <p style={{ textAlign: "center", fontWeight: 800 }}>👨‍🚀 Astro lagi baca nota lo<span className="typing"> <span /><span /><span /></span></p>
+                <p style={{ textAlign: "center", fontWeight: 800 }}>👨‍🚀 Sabi lagi baca nota lo<span className="typing"> <span /><span /><span /></span></p>
               </>
             )}
             {fase === "hasil" && hasil && (
@@ -139,7 +139,7 @@ export default function Cuan({ ings, expenses, omzet, modal, keluar }: { ings: I
               {expenses.map((e) => (
                 <div key={e.id}>
                   <span className="rank num" style={{ width: "auto", padding: "0 8px", fontSize: 12, fontFamily: "var(--f-mono)", fontWeight: 500 }}>{jamWib(e.created_at)}</span>
-                  <span className="grow"><b className="ellip" style={{ display: "block" }}>{e.keterangan}</b><span className="muted" style={{ fontSize: 12.5 }}>{e.kategori}{e.via_scan ? " · via Astro Scan 📸" : ""}</span></span>
+                  <span className="grow"><b className="ellip" style={{ display: "block" }}>{e.keterangan}</b><span className="muted" style={{ fontSize: 12.5 }}>{e.kategori}{e.via_scan ? " · via Sabi Scan 📸" : ""}</span></span>
                   <b className="num">{rp(e.nominal)}</b>
                 </div>
               ))}

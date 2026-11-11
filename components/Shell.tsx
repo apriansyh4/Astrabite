@@ -12,7 +12,7 @@ const NAV = [
   { href: "/promo", ic: "promo", t: "Promo Studio", s: "Konten sosmed AI", short: "Promo" },
   { href: "/tv", ic: "tv", t: "Layar TV", s: "Menu & promo di toko", short: "TV" },
   { href: "/cuan", ic: "cuan", t: "Cuan Tracker", s: "Pengeluaran", short: "Cuan" },
-  { href: "/astro", ic: "astro", t: "Chat Astro", s: "Asisten AI", short: "Astro" },
+  { href: "/sabi", ic: "sabi", t: "Chat Sabi", s: "Asisten AI", short: "Sabi" },
 ];
 
 const BGS = [
@@ -70,7 +70,7 @@ export default function Shell({ children, email }: { children: React.ReactNode; 
     <div className="app">
       <aside className="side" aria-label="Navigasi">
         <div className="brand">
-          <svg className="mascot"><use href="#astro" /></svg>
+          <svg className="mascot"><use href="#sabi" /></svg>
           <div><b>AstraBite</b><small>by Astratech</small></div>
         </div>
         <nav className="nav">
@@ -83,9 +83,9 @@ export default function Shell({ children, email }: { children: React.ReactNode; 
         </nav>
         <div className="side-foot">
           <div className="card pop-violet" style={{ padding: 14 }}>
-            <p style={{ fontWeight: 700, fontFamily: "var(--f-display)" }}>✦ Tanya Astro</p>
+            <p style={{ fontWeight: 700, fontFamily: "var(--f-display)" }}>✦ Tanya Sabi</p>
             <p style={{ fontSize: 13, opacity: 0.9, marginTop: 4 }}>&quot;Stok apa yang harus dibeli buat besok?&quot;</p>
-            <Link className="btn sm" href="/astro" style={{ marginTop: 10 }}>Buka chat</Link>
+            <Link className="btn sm" href="/sabi" style={{ marginTop: 10 }}>Buka chat</Link>
           </div>
           <p className="muted ellip" style={{ fontSize: 12 }} title={email}>{email}</p>
           <div className="row between">
@@ -98,7 +98,7 @@ export default function Shell({ children, email }: { children: React.ReactNode; 
       <main className="main">
         <div className="topbar">
           <div className="brand">
-            <svg className="mascot" style={{ width: 38, height: 38 }}><use href="#astro" /></svg>
+            <svg className="mascot" style={{ width: 38, height: 38 }}><use href="#sabi" /></svg>
             <div><b style={{ fontSize: 17 }}>AstraBite</b><small>by Astratech</small></div>
           </div>
           <span className="row" style={{ gap: 6 }}>

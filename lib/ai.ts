@@ -71,7 +71,7 @@ export function aiErrorResponse(e: unknown) {
   const err = e as { status?: number; statusCode?: number; message?: string };
   const status = err.status ?? err.statusCode;
   if (status === 401 || status === 403) return NextResponse.json({ error: "GEMINI_API_KEY salah atau tidak punya akses." }, { status: 500 });
-  if (status === 429) return NextResponse.json({ error: "Astro lagi kebanjiran permintaan. Coba lagi sebentar." }, { status: 429 });
+  if (status === 429) return NextResponse.json({ error: "Sabi lagi kebanjiran permintaan. Coba lagi sebentar." }, { status: 429 });
   if (status === 400) return NextResponse.json({ error: "Permintaan ke AI ditolak: " + (err.message ?? "") }, { status: 400 });
   if (status) return NextResponse.json({ error: `AI error (${status}). Coba lagi.` }, { status: 502 });
   return NextResponse.json({ error: err.message ?? "Terjadi kesalahan" }, { status: 500 });
