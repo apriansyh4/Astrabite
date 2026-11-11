@@ -71,7 +71,7 @@ export default function Shell({ children, email }: { children: React.ReactNode; 
       <aside className="side" aria-label="Navigasi">
         <div className="brand">
           <svg className="mascot"><use href="#sabi" /></svg>
-          <div><b>AstraBite</b><small>by Astratech</small></div>
+          <div><b>AstraBite</b><small>by LoginMasuk</small></div>
         </div>
         <nav className="nav">
           {NAV.map((x) => (
