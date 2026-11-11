@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "AstraBite by Astratech",
+    name: "AstraBite by LoginMasuk",
     short_name: "AstraBite",
     description: "Kasir, stok, promo, layar TV, dan asisten AI buat UMKM makanan.",
     start_url: "/",
