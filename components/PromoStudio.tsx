@@ -95,7 +95,7 @@ export default function PromoStudio({ menus, promos, settings, posts }: { menus:
   return (
     <>
       <div className="head">
-        <div><h1>Promo Studio <span className="scribble">biar viral</span></h1><p>Hook, caption, hashtag, sampai script video. Ditulis Astro dari data penjualan lo.</p></div>
+        <div><h1>Promo Studio <span className="scribble">biar viral</span></h1><p>Hook, caption, hashtag, sampai script video. Ditulis Sabi dari data penjualan lo.</p></div>
         <div className="row">
           {(["ig", "tiktok", "wa"] as const).filter((k) => (k === "ig" ? settings.instagram : k === "tiktok" ? settings.tiktok : settings.whatsapp)).map((k) => (
             <span key={k} className="plat sm" style={{ background: PLAT[k].c }} title={`${PLAT[k].n} terhubung`}>{PLAT[k].s}</span>
@@ -120,12 +120,12 @@ export default function PromoStudio({ menus, promos, settings, posts }: { menus:
               </div>
             )}
             {err && <div className="err">{err}</div>}
-            <button className="btn primary" onClick={generate} disabled={busy || !m}>{busy ? "Astro lagi nulis…" : out ? "↻ Generate versi lain" : "✦ Generate pakai Astro"}</button>
+            <button className="btn primary" onClick={generate} disabled={busy || !m}>{busy ? "Sabi lagi nulis…" : out ? "↻ Generate versi lain" : "✦ Generate pakai Sabi"}</button>
           </div>
 
           {busy && (
             <div className="card" style={{ textAlign: "center", padding: "44px 20px" }}>
-              <p style={{ fontWeight: 700 }}>✦ Astro lagi nulis konten<span className="typing"> <span /><span /><span /></span></p>
+              <p style={{ fontWeight: 700 }}>✦ Sabi lagi nulis konten<span className="typing"> <span /><span /><span /></span></p>
               <p className="muted" style={{ marginTop: 6, fontSize: 13 }}>Ngecek data penjualan {m?.nama} + jam ramai pelanggan</p>
             </div>
           )}
@@ -143,7 +143,7 @@ export default function PromoStudio({ menus, promos, settings, posts }: { menus:
                   <button className="btn sm" onClick={() => navigator.clipboard?.writeText(capText).then(() => toast("Caption tersalin ✅")).catch(() => toast("Gagal menyalin, blok teksnya manual ya"))}>Salin caption</button></div>
                 <div className="cap">{capText}</div>
                 {out.diskon > 0 && (out.margin < 45
-                  ? <div className="tip" style={{ background: "var(--bad-bg)" }}>⚠️ <b>Hati-hati:</b> diskon {out.diskon}% bikin margin tinggal {out.margin}%. Astro saranin diskon maksimal {out.max_diskon}%.</div>
+                  ? <div className="tip" style={{ background: "var(--bad-bg)" }}>⚠️ <b>Hati-hati:</b> diskon {out.diskon}% bikin margin tinggal {out.margin}%. Sabi saranin diskon maksimal {out.max_diskon}%.</div>
                   : <div className="tip" style={{ background: "var(--good-bg)" }}>✅ Margin setelah diskon masih {out.margin}%. Aman buat promo.</div>)}
               </div>
               {out.script.length > 0 && (
@@ -172,7 +172,7 @@ export default function PromoStudio({ menus, promos, settings, posts }: { menus:
                   </div>
                 ) : (
                   <>
-                    <div className="ph-head"><svg><use href="#astro" /></svg><b>{handle || settings.nama_toko}</b><span style={{ marginLeft: "auto", color: "#888" }}>•••</span></div>
+                    <div className="ph-head"><svg><use href="#sabi" /></svg><b>{handle || settings.nama_toko}</b><span style={{ marginLeft: "auto", color: "#888" }}>•••</span></div>
                     <div className="post-img" style={{ background: GRAD[m.warna] }}>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       {m.foto_url ? <img className="cover" src={m.foto_url} alt="" /> : <span className="plate"><span className="food">{m.emoji}</span></span>}

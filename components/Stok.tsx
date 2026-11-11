@@ -42,7 +42,7 @@ export default function Stok({ ings, usage }: { ings: Ingredient[]; usage: Recor
   return (
     <>
       <div className="head">
-        <div><h1>Fuel Tank</h1><p>Kepotong otomatis tiap ada penjualan. Astro ngitung kapan bahan habis dari pemakaian 7 hari terakhir.</p></div>
+        <div><h1>Fuel Tank</h1><p>Kepotong otomatis tiap ada penjualan. Sabi ngitung kapan bahan habis dari pemakaian 7 hari terakhir.</p></div>
         <div className="row wrap">
           <span className="pill bad">{c.bad} kritis</span><span className="pill warn">{c.warn} tipis</span><span className="pill good">{c.good} aman</span>
           <button className="btn sm primary" onClick={() => setOpen(!open)}>+ Bahan baru</button>

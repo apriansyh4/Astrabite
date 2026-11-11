@@ -6,9 +6,9 @@ const SUGS = [
   "Omzet hari ini berapa?", "Menu apa yang paling laku?", "Stok apa yang mau habis?", "Besok siapin berapa porsi?",
   "Untung minggu ini?", "Harga mana yang perlu naik?", "Kasih ide promo buat jam sepi",
 ];
-const SALAM: Msg = { role: "assistant", content: "Halo Bos! 👋 Gue Astro. Gue bisa baca data penjualan, stok, menu, promo, sama pengeluaran lo. Mau tanya apa?" };
+const SALAM: Msg = { role: "assistant", content: "Halo Bos! 👋 Gue Sabi. Gue bisa baca data penjualan, stok, menu, promo, sama pengeluaran lo. Mau tanya apa?" };
 
-export default function AstroChat() {
+export default function SabiChat() {
   const [msgs, setMsgs] = useState<Msg[]>([SALAM]);
   const [input, setInput] = useState("");
   const [busy, setBusy] = useState(false);
@@ -24,7 +24,7 @@ export default function AstroChat() {
       const r = await fetch("/api/ai/chat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ messages: history.slice(-20) }) });
       if (!r.ok || !r.body) {
         const j = await r.json().catch(() => ({}));
-        throw new Error(j.error ?? "Astro lagi nggak bisa dihubungi");
+        throw new Error(j.error ?? "Sabi lagi nggak bisa dihubungi");
       }
       const reader = r.body.getReader();
       const dec = new TextDecoder();
@@ -44,16 +44,16 @@ export default function AstroChat() {
 
   return (
     <>
-      <div className="head"><div><h1>Chat Astro</h1><p>Tanya pakai bahasa santai. Astro jawab dari data toko lo yang terbaru.</p></div></div>
+      <div className="head"><div><h1>Chat Sabi</h1><p>Tanya pakai bahasa santai. Sabi jawab dari data toko lo yang terbaru.</p></div></div>
       <div className="card chat">
         <div className="chat-head">
-          <svg style={{ width: 40, height: 40, flex: "none" }}><use href="#astro" /></svg>
-          <div><b>Astro</b><br /><span style={{ fontSize: 12.5, opacity: 0.85 }}>● online · baca data dapur lo</span></div>
+          <svg style={{ width: 40, height: 40, flex: "none" }}><use href="#sabi" /></svg>
+          <div><b>Sabi</b><br /><span style={{ fontSize: 12.5, opacity: 0.85 }}>● online · baca data dapur lo</span></div>
         </div>
         <div className="msgs" ref={box} aria-live="polite">
           {msgs.map((m, i) => (
             <div key={i} className={`msg ${m.role === "user" ? "me" : "bot"}`} style={{ whiteSpace: "pre-wrap" }}>
-              {m.content || <span className="typing" aria-label="Astro sedang mengetik"><span /><span /><span /></span>}
+              {m.content || <span className="typing" aria-label="Sabi sedang mengetik"><span /><span /><span /></span>}
             </div>
           ))}
         </div>
