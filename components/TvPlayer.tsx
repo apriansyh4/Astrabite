@@ -34,8 +34,22 @@ export default function TvPlayer({ token, onLabel }: { token: string; onLabel?: 
         const r = await fetch(`/api/tv/${token}`, { cache: "no-store" });
         const j = await r.json();
         if (!alive) return;
-        if (!r.ok) { setErr(j.error ?? "Gagal memuat"); return; }
-        setFeed(j); setErr("");
+        // FIX: settings bisa null (baris settings belum ada / diblokir RLS), jangan sampai bikin crash
+        if (!r.ok || !j?.settings) { setErr(j?.error ?? "Pengaturan toko belum diisi"); return; }
+        // Normalisasi supaya field yang null/hilang tidak bikin crash di render
+        const normalized = {
+          ...j,
+          menus: j.menus ?? [],
+          promos: j.promos ?? [],
+          terlaris: j.terlaris ?? [],
+          antrian: { disiapkan: j.antrian?.disiapkan ?? [], siap: j.antrian?.siap ?? [] },
+          settings: {
+            ...j.settings,
+            tv_playlist: j.settings.tv_playlist ?? {},
+            tv_testimoni: j.settings.tv_testimoni ?? [],
+          },
+        } as TvFeed;
+        setFeed(normalized); setErr("");
       } catch {
         if (alive) setErr("Koneksi terputus, mencoba lagi…");
       }
@@ -45,7 +59,7 @@ export default function TvPlayer({ token, onLabel }: { token: string; onLabel?: 
     return () => { alive = false; clearInterval(t); };
   }, [token]);
 
-  const ig = feed?.settings.instagram;
+  const ig = feed?.settings?.instagram;
   useEffect(() => {
     if (!ig) { setQr(""); return; }
     QRCode.toString(`https://instagram.com/${ig}`, { type: "svg", margin: 0 }).then(setQr).catch(() => setQr(""));
@@ -63,7 +77,7 @@ export default function TvPlayer({ token, onLabel }: { token: string; onLabel?: 
     return l;
   }, [feed]);
 
-  const dur = feed?.settings.tv_durasi ?? 8;
+  const dur = feed?.settings?.tv_durasi ?? 8;
   useEffect(() => {
     const t = setInterval(() => setIdx((i) => i + 1), dur * 1000);
     return () => clearInterval(t);
